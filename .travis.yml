@@ -1,7 +1,16 @@
 sudo: required
 services:
-    - docker
+  - docker
 
 script:
-  - docker build -t luisbranca/node-docker .
-  - docker images luisbranca/node_docker
+  - docker build -t lbranca42/node-docker .
+  - docker images lbranca42/node-docker
+
+before_deploy:
+  - docker login -u luisbranca -p Nicas#2014
+
+deploy:
+  provider: script
+  script: docker push luisbranca/node-docker
+  on:
+    branch: master
