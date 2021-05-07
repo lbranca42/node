@@ -7,7 +7,7 @@ script:
   - docker images lbranca42/node-docker
 
 before_deploy:
-  - docker login -u lbranca42@hotmail.com -p Nicas#2014
+  - docker login -u luisbranca -p Nicas#2014
 
 deploy:
   provider: script
